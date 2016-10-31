@@ -1,0 +1,203 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>茅台酒防伪查询系统</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+    <META HTTP-EQUIV="Expires" CONTENT="0"> 
+
+    <link rel="stylesheet" href="__PUBLIC__/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/assets/css/app.css">
+
+    <!--缩放-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+</head>
+<body>
+<!--在这里编写你的代码-->
+<header class="am-topbar" style="background:#FF0000">
+    <h1 class="am-topbar-brand">
+        <a href="#"><i class="am-icon-hand-pointer-o" style="color: white;" aria-hidden="true"></i>
+            <span class="am-text-xs" style="color: white;">www.moutaichina.com/fw 核对唯一官网 谨防假冒</span></a>
+    </h1>
+</header>
+<div class="am-g am-text-center">
+    <img src="__PUBLIC__/images/logo.jpg">
+    <p><span class="am-text-sm"><strong>选择验证方式</strong></span></p>
+    <div class="am-center" style="width: 35%;"><hr></div>
+</div>
+<div class="am-g">
+    <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{ }'>
+        <dl class="am-accordion-item am-active">
+            <dt class="am-accordion-title">
+                <span class="am-text-sm" style="">
+                    <i class="am-icon-weixin" style="color: #00DB00"></i>  微信</span>
+                <span class="am-text-sm am-align-right" style="color: #8E8E8E"><i class="am-icon-check-circle" style="color: #FF8000"></i> <strong>   贵州茅台酒股份有限公司</strong></span>
+            </dt>
+            <dd class="am-accordion-bd am-collapse am-in">
+                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                <div class="am-accordion-content">
+                    <div class="am-g-collapse am-text-center">
+                        <p>
+                            <span class="am-text-lg">动态验证码</span>
+                            <br>
+                            <span class="am-text-xl am-badge am-badge-secondary am-round" id="biao1" style=""><strong>{$rand}</strong></span>
+                            <br>
+                            <span class="am-text-sm">长按复制动态验证码</span>
+                        </p>
+                        <div class="am-g" style="display: block;" id="show_way">
+                            <p><span>1、关注：长按下方二维码保存图片。<br><br>
+                                2、退出本页面，进入微信“扫一扫”，点击右上角“从相册选取二维码”，扫描已保存的二维码图片，关注茅台官方微信。<br>(或者直接搜索公众号“mrhelper”)<br><br>
+                                3、复制上方动态验证码，粘贴发送至公众号，验证真伪。
+                            </span></p>
+                            <div class="am-g-collapse " style="">
+                                <img class="am-img-responsive"
+                                     style="display: inline-block;" src="__PUBLIC__/images/code.jpg">
+                            </div>
+                            <div class="am-g-collapse" style="">
+                                <img class="am-img-responsive"
+                                     style="display: inline-block;" src="__PUBLIC__/images/weixin_1.png">
+                                <span class="am-text-sm am-text-danger"><strong>关注时认准商标保护和微信认证标识</strong></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </dd>
+        </dl>
+        <dl class="am-accordion-item">
+            <dt class="am-accordion-title">
+                <span class="am-text-sm" style="">
+                    <i class="am-icon-internet-explorer" style="color: #0f9ae0"></i>  网址</span>
+                <span class="am-text-sm am-align-right" style="color: #FF0000"><strong>   www.moutaichina.com</strong></span>
+            </dt>
+            <dd class="am-accordion-bd am-collapse">
+                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                <div class="am-accordion-content">
+                    <p><span class="am-text-sm">仔细阅读</span></p>
+                    <p><span class="am-text-xs">1、核对浏览器上方网址是否正确。www.moutaichina.com/fw</span></p>
+                    <p><span class="am-text-xs">2、如网址不对，请拨打茅台打假热线400-818-9999。</span></p>
+                    <a href="{:u("Home/Index/query", array("random" => $rand))}" class="am-btn am-btn-secondary am-round">查询</a>
+                    <button type="button" class="am-btn am-round am-btn-default"><i class="am-icon-phone"></i> 400-818-9999</button>
+                </div>
+            </dd>
+        </dl>
+        <dl class="am-accordion-item">
+            <dt class="am-accordion-title">
+                <span class="am-text-sm" style="">
+                    <i class="am-icon-envelope" style="color: #8E8E8E;"></i>    短信</span>
+                <span class="am-text-sm am-align-right" style="color: #FF0000"><strong>    1680800900</strong></span>
+            </dt>
+            <dd class="am-accordion-bd am-collapse ">
+                <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
+                <div class="am-accordion-content">
+                    <p><span class="am-text-sm">认准官方短信平台：1680800900</span></p>
+                    <form>
+                        <p><span>&nbsp;<i class="am-icon-mobile-phone am-icon-md"></i>&nbsp;
+                                <input type="text" placeholder="手机号码"></span></p>
+                        <p><span><i class="am-icon-check-square-o am-icon-sm"></i>
+                            <input type="text" placeholder="验证码">
+                            <button type="button" class="am-btn am-btn-default am-btn-xs">获取验证码</button></span></p>
+                        <button type="button" class="am-btn am-btn-secondary am-round am-btn-sm">查询</button>
+                    </form>
+                </div>
+            </dd>
+        </dl>
+    </section>
+</div>
+<div class="am-g am-text-center">
+    <p><span><strong>贵州茅台酒（飞天） 53°C 375ml</strong></span></p>
+    <img class="am-img-responsive" src="__PUBLIC__/images/moutai_53_37.5.jpg">
+</div>
+<footer data-am-widget="footer" class="am-footer am-footer-default" style="background-color: #555555" data-am-footer="{  }">
+    <div class="am-footer-switch" style="overflow: hidden;">
+        <div class="am-g-collapse" style="">
+            <div class="am-g-collapse" style="float: left; width: 60%;">
+                <p><span class="am-text-sm" style="color: #FFFFFF;"><strong>官方微信号“茅台防伪查询”</strong></span></p>
+                <p><span class="am-text-xs" style="color: #FFFFFF;"><strong>关注微信公众号<br>随时随地掌握最新茅台咨询</strong></span></p>
+            </div>
+            <div class="am-g-collapse" style="float: left; width: 40%; padding-right: 10px;">
+                <img class="am-img-responsive" src="__PUBLIC__/images/code.jpg">
+            </div>
+        </div>
+        <div class="am-g-collapse" style="">
+            <div class="am-g-collapse am-text-center" style="float: left; width: 40%;">
+                <p><span class="am-text-sm" style="color: #FFFFFF;"><strong>公司信息</strong></span></p>
+            </div>
+            <div class="am-g-collapse am-text-left" style="float: left; width: 60%; padding-right: 10px;">
+                <p><span class="am-text-xs am-text" style="color: #FFFFFF;">
+                地址: 贵州省仁怀市茅台镇<br>服务电话: 4008189999<br>官网:<a href="#" style="color: #FFFFFF">www.moutaichina.com</a></span></p>
+            </div>
+        </div>
+        <!--<div>-->
+            <!--<p><span class="am-text-sm" style="color: #FFFFFF;"><strong>公司信息</strong></span></p>-->
+            <!--<p><span class="am-text-xs" style="color: #FFFFFF;">-->
+                <!--地址: 贵州省仁怀市茅台镇<br>服务电话: 4008189999<br>官网:www.moutaichina.com</span></p>-->
+        <!--</div>-->
+    </div>
+</footer>
+<!--在这里结束你的代码-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/assets/js/amazeui.min.js"></script>
+<!--<script src="assets/js/ZeroClipboard.js"></script>-->
+<script type="text/javascript">
+    function show_way() {
+        $("#show_way").show(500);
+    }
+
+    function copy_w() {
+        var gg = $("#biao1")
+        copyText(gg);
+    }
+
+    function copyUrl2()
+    {
+        var Url2=document.getElementById("biao2");
+        Url2.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        alert("已复制好，可贴粘。");
+    }
+
+    function copyText(obj)
+    {
+        var rng = document.body.createTextRange();
+        rng.moveToElementText(obj);
+        rng.scrollIntoView();
+        rng.select();
+        rng.execCommand("Copy");
+        rng.collapse(false);
+        alert("复制成功!");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<extend name="Index:base" />
+
+<block name="title">添加酒品</block>
+
+<block name="head">
+    <script type="text/javascript" src="__PUBLIC__/jedate/jedate.js"></script>
+    <link type="text/css" rel="stylesheet" href="__PUBLIC__/jedate/skin/jedate.css">
+</block>
+
+<block name="content">
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">添加酒品</strong></div>
+            </div>
+
+            <hr/>
+
+            <div class="am-g">
+                <div class="am-u-sm-12 am-u-md-4 am-u-md-push-8"></div>
+
+                <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
+                    <form class="am-form am-form-horizontal" method="post" action="__SELF__">
+                        <div class="am-form-group">
+                            <label for="user-name" class="am-u-sm-3 am-form-label">酒品序列</label>
+                            <div class="am-u-sm-9">
+                                <input name="wine_id" type="text" id="user-name" placeholder="酒品序列">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label class="am-u-sm-3 am-form-label">生产日期</label>
+                            <div class="am-u-sm-9">
+                                <input name="product_timestamp" class="datainp" id="product_time" type="text" placeholder="生产日期" readonly>
+                            </div>
+                        </div>
+
+
+                        <div class="am-form-group">
+                            <label for="user-intro" class="am-u-sm-3 am-form-label">物流信息</label>
+                            <div class="am-u-sm-9">
+                                <textarea name="express" rows="10" id="user-intro" placeholder="物流信息"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                <input type="submit" class="am-btn am-btn-primary" value="添加"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2016 Crystone, Inc.</p>
+        </footer>
+
+    </div>
+    <script type="text/javascript">
+        jeDate({
+            dateCell: '#product_time',
+            isinitVal: true,
+            format:"YYYY-MM-DD hh:mm:ss",
+            isClear:false
+        });
+    </script>
+</block>

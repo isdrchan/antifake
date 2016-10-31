@@ -1,0 +1,236 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>茅台酒防伪查询系统</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0"> 
+    
+    <link rel="stylesheet" href="__PUBLIC__/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/assets/css/app.css">
+
+    <!--缩放-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <script type="text/javascript" src="__PUBLIC__/jedate/jedate.js"></script>
+</head>
+<body>
+<!--在这里编写你的代码-->
+
+<div class="am-g am-text-center">
+    <img src="__PUBLIC__/images/logo.jpg">
+    <div class="am-g-collapse" style="background-color: #F0F0F0;">
+        <p><i class="am-icon-check-circle" style="color: #02C874; font-size: 350%; "></i><br>
+            <span class="am-text-lg"><strong>恭喜！你的防伪码为茅台官方出品</strong></span></p>
+    </div>
+
+</div>
+<div class="am-g" style="overflow: hidden;">
+    <div class="am-g-collapse" style="width: 50%; float: left;">
+        <img class="am-img-responsive" src="__PUBLIC__/images/moutai_53_37.5.jpg">
+    </div>
+    <div class="am-g-collapse am-text-left" style="width: 50%;float: left;">
+        <p>
+            <span class="am-text-sm"><strong>产品类别</strong>  &nbsp;贵州茅台酒</span><br>
+            <span class="am-text-sm"><strong>品  名</strong><br>新飞天53%vol 500ml贵州茅台酒（1×12）RFID</span><br>
+            <span class="am-text-sm"><strong>容  量</strong>  &nbsp;500毫升</span><br>
+            <span class="am-text-sm"><strong>度  数</strong>  &nbsp;53度</span><br>
+            <span class="am-text-sm"><strong>生产批次</strong>  &nbsp;2016-064</span><br>
+        </p>
+    </div>
+</div>
+<hr>
+<div class="am-g am-text-center">
+    <div data-am-widget="tabs" class="am-tabs am-tabs-d2">
+        <ul class="am-tabs-nav am-cf">
+            <li class="am-active"><a href="[data-tab-panel-0]">鉴定记录</a></li>
+            <li class=""><a href="[data-tab-panel-1]">物流信息</a></li>
+        </ul>
+        <div class="am-tabs-bd">
+            <div data-tab-panel-0 class="am-tab-panel am-active">
+                <table class="am-table">
+                    <thead class="am-text-sm">
+                    <tr>
+                        <th class="am-text-center" width="45">次数</th>
+                        <th class="am-text-center" width="90">时间</th>
+                        <th class="am-text-center">查询地点</th>
+                    </tr>
+                    </thead>
+                    <tbody class="am-text-sm">
+                        <tr>
+                            <td><?php $count = 10;echo $count;?></td>
+                            <td><script>document.write(jeDate.now("{$nowtime}"));</script></td>
+                            <td><span class="" id="location_info">未知</span></td>
+                        </tr>
+                    <volist name="log" id="vo">
+                        <tr>
+                            <td><?php echo --$count;?></td>
+                            <td><script>document.write(jeDate.now("{$vo.timestamp}"));</script></td>
+                            <td>{$vo.location}</td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+            <div data-tab-panel-1 class="am-tab-panel ">
+                <span><strong>客商名称</strong></span><br><span>国酒茅台（贵州仁怀）营销有限公司</span>
+                <table class="am-table">
+                    <thead class="am-text-sm">
+                    <tr>
+                        <th class="am-text-center">日期</th>
+                        <th class="am-text-center">公司</th>
+                        <th class="am-text-center">状态</th>
+                    </tr>
+                    </thead>
+                    <tbody class="am-text-sm">
+                    <tr >
+                        <td>2006-10-10</td>
+                        <td>贵州茅台酒股份有限公司</td>
+                        <td>开始酿造</td>
+                    </tr>
+                    <tr >
+                        <td>2016-5-1</td>
+                        <td>贵州茅台酒股份有限公司</td>
+                        <td>成品入库</td>
+                    </tr>
+                    <tr >
+                        <td>2016-10-10</td>
+                        <td>国酒茅台（贵州仁怀）营销有限公司</td>
+                        <td>客商销售</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<footer data-am-widget="footer" class="am-footer am-footer-default" style="background-color: #555555" data-am-footer="{  }">
+    <div class="am-footer-switch" style="overflow: hidden;">
+        <div class="am-g-collapse" style="">
+            <div class="am-g-collapse" style="float: left; width: 60%;">
+                <p><span class="am-text-sm" style="color: #FFFFFF;"><strong>官方微信号“茅台防伪查询”</strong></span></p>
+                <p><span class="am-text-xs" style="color: #FFFFFF;"><strong>关注微信公众号<br>随时随地掌握最新茅台咨询</strong></span></p>
+            </div>
+            <div class="am-g-collapse" style="float: left; width: 40%; padding-right: 10px;">
+                <img class="am-img-responsive" src="__PUBLIC__/images/code.jpg">
+            </div>
+        </div>
+        <div class="am-g-collapse" style="">
+            <div class="am-g-collapse am-text-center" style="float: left; width: 40%;">
+                <p><span class="am-text-sm" style="color: #FFFFFF;"><strong>公司信息</strong></span></p>
+            </div>
+            <div class="am-g-collapse am-text-left" style="float: left; width: 60%; padding-right: 10px;">
+                <p><span class="am-text-xs am-text" style="color: #FFFFFF;">
+                地址: 贵州省仁怀市茅台镇<br>服务电话: 4008189999<br>官网:<a href="#" style="color: #FFFFFF">www.moutaichina.com</a></span></p>
+            </div>
+        </div>
+        <!--<div>-->
+            <!--<p><span class="am-text-sm" style="color: #FFFFFF;"><strong>公司信息</strong></span></p>-->
+            <!--<p><span class="am-text-xs" style="color: #FFFFFF;">-->
+                <!--地址: 贵州省仁怀市茅台镇<br>服务电话: 4008189999<br>官网:www.moutaichina.com</span></p>-->
+        <!--</div>-->
+    </div>
+</footer>
+<!--在这里结束你的代码-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+  var locationParam = null;
+  var param = {};
+
+  $(document).ready(function() {
+    position();
+  });
+
+  function getter(myParam){
+    $.ajax({
+      type : "GET",  //提交方式
+      url : "{:U('getLocation')}",//路径
+      data : myParam, //数据，这里使用的是Json格式进行传输
+      success : function(data) {
+        //返回数据根据结果进行相应的处理
+        var jsonData = JSON.parse(data);
+        console.log(jsonData);
+        $('#location_info').text(jsonData.location_str);
+      }
+    });
+  }
+
+  function position(){
+    if (window.navigator.geolocation) {
+      var options = {
+        enableHighAccuracy: true
+      };
+      window.navigator.geolocation.getCurrentPosition(handleSuccess, handleError, options);
+    } else {
+      console.log("浏览器不支持html5来获取地理位置信息");
+    }
+  }
+
+  //获取经纬度坐标发送ajax请求
+  function handleSuccess(position){
+    // 获取到当前位置经纬度  本例中是chrome浏览器取到的是google地图中的经纬度
+    var lng = position.coords.longitude;
+    var lat = position.coords.latitude;
+    locationParam = lng + "," + lat;
+    param = {
+      random: "{$random}",
+      location: locationParam
+    };
+    getter(param);
+  }
+
+  function handleError(error){
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        console.log("用户拒绝对获取地理位置的请求。" )
+        break;
+      case error.POSITION_UNAVAILABLE:
+        console.log("位置信息是不可用的。" )
+        break;
+      case error.TIMEOUT:
+        console.log("请求用户地理位置超时。" )
+        break;
+      case error.UNKNOWN_ERROR:
+        console.log("未知错误。" )
+        break;
+    }
+    param = {
+      random: "{$random}"
+    };
+    getter(param);
+  }
+</script>
+</body>
+</html>

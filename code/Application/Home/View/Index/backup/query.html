@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Sidebar | Amaze UI Example</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <link rel="stylesheet" href="__PUBLIC__/assets/css/amazeui.min.css"/>
+  <script type="text/javascript" src="__PUBLIC__/jedate/jedate.js"></script>
+  <style>
+    @media only screen and (min-width: 641px) {
+      .am-offcanvas {
+        display: block;
+        position: static;
+        background: none;
+      }
+
+      .am-offcanvas-bar {
+        position: static;
+        width: auto;
+        background: none;
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      .am-offcanvas-bar:after {
+        content: none;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .am-offcanvas-bar .am-nav>li>a {
+        color:#ccc;
+        border-radius: 0;
+        border-top: 1px solid rgba(0,0,0,.3);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.05)
+      }
+
+      .am-offcanvas-bar .am-nav>li>a:hover {
+        background: #404040;
+        color: #fff
+      }
+
+      .am-offcanvas-bar .am-nav>li.am-nav-header {
+        color: #777;
+        background: #404040;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+        text-shadow: 0 1px 0 rgba(0,0,0,.5);
+        border-top: 1px solid rgba(0,0,0,.3);
+        font-weight: 400;
+        font-size: 75%
+      }
+
+      .am-offcanvas-bar .am-nav>li.am-active>a {
+        background: #1a1a1a;
+        color: #fff;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+      }
+
+      .am-offcanvas-bar .am-nav>li+li {
+        margin-top: 0;
+      }
+    }
+
+    .my-head {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .my-button {
+      position: fixed;
+      top: 0;
+      right: 0;
+      border-radius: 0;
+    }
+    .my-sidebar {
+      padding-right: 0;
+      border-right: 1px solid #eeeeee;
+    }
+
+    .my-footer {
+      border-top: 1px solid #eeeeee;
+      padding: 10px 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<header data-am-widget="header" class="am-header am-header-default">
+  <div class="am-header-left am-header-nav">
+  </div>
+
+  <h1 class="am-header-title" style="overflow: visible;">
+    <a href="#title-link" class="">
+      茅台防伪查询平台
+    </a>
+  </h1>
+
+  <div class="am-header-right am-header-nav">
+    <a href="#right-link" class="">
+      <i class="am-header-icon am-icon-bars"></i>
+    </a>
+  </div>
+</header>
+<header class="am-g my-head">
+  <div class="am-u-sm-12 am-article">
+    <h2 class="am-article-title"><strong>防伪验证成功</strong></h2>
+    <h2 class="am-article-title">茅台正品</h2>
+    <figure data-am-widget="figure" class="am am-figure am-figure-default "   data-am-figure="{  pureview: 'true' }">
+      <img src="http://img3.okdocuments.com/group1/M01/0A/3A/wKgKPVTQdUmAI7MGAAM5tv36GIY330.jpg"
+           data-rel="http://img3.okdocuments.com/group1/M01/0A/3A/wKgKPVTQdUmAI7MGAAM5tv36GIY330.jpg" alt=""/>
+      <figcaption class="am-figure-capition-btm">
+        <p class="am-text-lg"><strong>生产日期：<span><script>document.write(jeDate.now("{$info.product_timestamp}"));</script></span></strong></p>
+        <p class="am-text-lg"><strong>防伪查询次数：<span class="" id="times">{$info.query_times}</span></strong></p>
+        <p class="am-text-lg"><strong>当前IP：<span class="">{$ip}</span></strong></p>
+        <p class="am-text-lg"><strong>当前地理位置：<span class="" id="location_info">未知</span></strong></p>
+      </figcaption>
+    </figure>
+  </div>
+</header>
+<hr class="am-article-divider"/>
+<div class="am-g am-g-fixed">
+  <!--<div class="am-u-md-9 am-u-md-push-2">-->
+    <div class="am-g">
+      <div class="am-u-sm-11 am-u-sm-centered">
+        <div class="am-cf am-article">
+          <!--<div class="am-align-left">-->
+            <!--<img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt="" width="240">-->
+          <!--</div>-->
+
+          <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+            <!--列表标题-->
+            <div class="am-list-news-hd am-cf">
+              <!--带更多链接-->
+              <a href="###" class="">
+                <h2><strong>物流信息</strong></h2>
+              </a>
+            </div>
+            <div class="am-list-news-bd">
+              <ul class="am-list">
+                <li class="am-g">
+                    <span class="am-text-sm">{$info.express}</span>
+                </li>
+              </ul>
+            </div>
+
+            <!--&lt;!&ndash;更多在底部&ndash;&gt;-->
+            <!--<div class="am-list-news-ft">-->
+              <!--<a class="am-list-news-more am-btn am-btn-default " href="###">查看更多 &raquo;</a>-->
+            <!--</div>-->
+          </div>
+          <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+            <!--列表标题-->
+            <div class="am-list-news-hd am-cf">
+              <!--带更多链接-->
+              <a href="###" class="">
+              <h2><strong>查询验证历史</strong></h2>
+              </a>
+            </div>
+            <div class="am-list-news-bd">
+              <ul class="am-list">
+                <volist name="log" id="vo">
+                <li class="am-g">
+                  <span class="am-text-sm" style="float:left;">IP地址:{$vo.ip}</span>
+                  <span class="am-text-sm" style="float:left;">&nbsp;&nbsp;&nbsp;查询位置：{$vo.location}</span>
+                  <span class="am-text-sm" style="float:right;">查询时间：<script>document.write(jeDate.now("{$vo.timestamp}"));</script></span>
+                </li>
+                </volist>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  <!--</div>-->
+</div>
+
+<footer class="my-footer">
+  <p><small>© Copyright Crystone.</small></p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="__PUBLIC__/assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+  var locationParam = null;
+  var param = {};
+
+  $(document).ready(function() {
+    position();
+  });
+
+  function getter(myParam){
+    $.ajax({
+      type : "GET",  //提交方式
+      url : "{:U('getLocation')}",//路径
+      data : myParam, //数据，这里使用的是Json格式进行传输
+      success : function(data) {
+        //返回数据根据结果进行相应的处理
+        var jsonData = JSON.parse(data);
+        console.log(jsonData);
+        $('#location_info').text(jsonData.location_str);
+      }
+    });
+  }
+
+  function position(){
+    if (window.navigator.geolocation) {
+      var options = {
+        enableHighAccuracy: true
+      };
+      window.navigator.geolocation.getCurrentPosition(handleSuccess, handleError, options);
+    } else {
+      console.log("浏览器不支持html5来获取地理位置信息");
+    }
+  }
+
+  //获取经纬度坐标发送ajax请求
+  function handleSuccess(position){
+    // 获取到当前位置经纬度  本例中是chrome浏览器取到的是google地图中的经纬度
+    var lng = position.coords.longitude;
+    var lat = position.coords.latitude;
+    locationParam = lng + "," + lat;
+    param = {
+      random: "{$random}",
+      location: locationParam
+    };
+    getter(param);
+  }
+
+  function handleError(error){
+    switch(error.code) {
+      case error.PERMISSION_DENIED:
+        console.log("用户拒绝对获取地理位置的请求。" )
+        break;
+      case error.POSITION_UNAVAILABLE:
+        console.log("位置信息是不可用的。" )
+        break;
+      case error.TIMEOUT:
+        console.log("请求用户地理位置超时。" )
+        break;
+      case error.UNKNOWN_ERROR:
+        console.log("未知错误。" )
+        break;
+    }
+    param = {
+      random: "{$random}"
+    };
+    getter(param);
+  }
+</script>
+</body>
+</html>
